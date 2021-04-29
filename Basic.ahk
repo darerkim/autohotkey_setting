@@ -152,6 +152,8 @@ SC07B::
     Send, {vk15sc138}
   }
   return
+; 無変換 + r -> CAPTURE TOOL
+SC07B & r::#+s
 
 ;　変換　+ {...}  ->  arrow keys, tab, esc ...
 SC079 & i::SC148
@@ -242,6 +244,7 @@ CapsLock & 4::
 CapsLock & 5::
 CapsLock & n::
 CapsLock & Tab::
+CapsLock & Space::
 If GetKeyState("w", "P")
   if WinExist("ahk_exe msedge.exe")
   {
@@ -424,6 +427,8 @@ Else If GetKeyState("n", "P")
   } 
 Else If GetKeyState("Tab", "P")
   Send #{d}
+Else If GetKeyState("Space", "P")
+  Send #{s}
 
 return
 
