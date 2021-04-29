@@ -102,22 +102,56 @@ Else If GetKeyState("SC028", "P")
   Send {Numpad0}
 
 ;　無変換　+ {asd}  ->  Language swap key
+; this are functions for korean eng swap
+IME_CHECK(WinTitle) 
+{
+  WinGet,hWnd,ID,%WinTitle%
+  Return Send_ImeControl(ImmGetDefaultIMEWnd(hWnd),0x005,"")
+}
+Send_ImeControl(DefaultIMEWnd, wParam, lParam)
+{
+  DetectSave := A_DetectHiddenWindows
+  DetectHiddenWindows,ON
+  SendMessage 0x283, wParam,lParam,,ahk_id %DefaultIMEWnd%
+  if (DetectSave <> A_DetectHiddenWindows)
+  DetectHiddenWindows,%DetectSave%
+  return ErrorLevel
+}
+
+ImmGetDefaultIMEWnd(hWnd)
+{
+  return DllCall("imm32\ImmGetDefaultIMEWnd", Uint,hWnd, Uint)
+}
 SC07B & s::
 SC07B & a::
 SC07B & d::
 SC07B & SC035::
-If GetKeyState("a", "P")
+If GetKeyState("SC035", "P")
+  Send +{SC00D}
+Else If GetKeyState("a", "P")
   Send ^+{SC00A}
 Else If GetKeyState("s", "P")
   Send ^+{SC008}
-Else If GetKeyState("d", "P")
-  Send {vk15sc138}
-Else If GetKeyState("SC035", "P")
-  Send +{SC00D}
-Else
-  Send {SC07B}
-return
+  WinGetActiveTitle, ExplorerTitle
 
+  ime_status := % IME_CHECK("A")
+  if (ime_status = "0") 
+  {
+    Send, {vk15sc138}
+  } 
+return
+SC07B::
+  Send ^+{SC008}
+  ime_status := % IME_CHECK("A")
+  if (ime_status = "0") 
+  {
+
+  } 
+    else 
+  {
+    Send, {vk15sc138}
+  }
+  return
 
 ;　変換　+ {...}  ->  arrow keys, tab, esc ...
 SC079 & i::SC148
@@ -181,9 +215,9 @@ if (UpAndDown) OR (LeftAndRight)
   }
 return
 ; カタカナkey -> 変換key
-SC070::
+SC079::
 {
-    Send, {SC079}
+  Send, {SC079}
 }
 
 ; Capslock + {...} -> hotkeys of applications 
