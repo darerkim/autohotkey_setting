@@ -10,7 +10,7 @@ SetWorkingDir %A_ScriptDir%
 	gmail_key = gm
 
 #IfWinNotActive, Quick Search
-+Space::
+<+Space::
 
 ;gui layout　　　
 ;----------------------------------------

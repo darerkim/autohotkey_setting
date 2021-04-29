@@ -261,12 +261,12 @@ Else If GetKeyState("e", "P")
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+    
   }
 Else If GetKeyState("r", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+    
   }
   Else
   {
@@ -284,20 +284,20 @@ Else If GetKeyState("t", "P")
 Else If GetKeyState("a", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+    
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+
   }
 Else If GetKeyState("s", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+    
   }
 Else If GetKeyState("d", "P")
   if WinExist("ahk_exe chrome.exe")
@@ -311,11 +311,11 @@ Else If GetKeyState("d", "P")
 Else If GetKeyState("f", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+    
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+
   }
 Else If GetKeyState("g", "P")
   if WinExist("ahk_class CabinetWClass")
@@ -329,47 +329,47 @@ Else If GetKeyState("g", "P")
 Else If GetKeyState("z", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+    
   }
 Else If GetKeyState("x", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+    
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+
   }
 Else If GetKeyState("c", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+    
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+    
   }
 Else If GetKeyState("v", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+    
   }
 Else If GetKeyState("b", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+    
   }
 Else If GetKeyState("1", "P")
   if WinExist("ahk_exe Unity.exe")
@@ -401,20 +401,20 @@ Else If GetKeyState("3", "P")
 Else If GetKeyState("4", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+
   }  
 Else If GetKeyState("5", "P")
   if WinExist("ahk_exe Code.exe")
   {
-    WinActivate, ahk_exe Code.exe
+
   }
   Else
   {
-    RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
+
   }  
 Else If GetKeyState("n", "P")
   if WinExist("ahk_class Notepad")
