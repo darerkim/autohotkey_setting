@@ -98,7 +98,7 @@ return
 SC07B & n::
 If GetKeyState("LShift", "P")
   Send +{SC007}
-Else If GetKeyState("SC028", "P")
+Else If GetKeyState("n", "P")
   Send {Numpad0}
 
 ;　無変換　+ {asd}  ->  Language swap key
