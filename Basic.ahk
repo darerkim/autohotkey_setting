@@ -194,6 +194,7 @@ CapsLock & 2::
 CapsLock & 3::
 CapsLock & 4::
 CapsLock & 5::
+CapsLock & Tab::
 If GetKeyState("w", "P")
   if WinExist("ahk_exe msedge.exe")
   {
@@ -365,6 +366,8 @@ Else If GetKeyState("5", "P")
   {
     RUN C:\Users\drago\AppData\Local\Programs\Microsoft VS Code\Code.exe
   }  
+Else If GetKeyState("Tab", "P")
+  Send #{d}
 return
 
 
