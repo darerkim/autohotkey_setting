@@ -96,10 +96,16 @@ Else If GetKeyState("SC028", "P")
   Send {SC00C}
 return
 SC07B & n::
-If GetKeyState("LShift", "P")
-  Send +{SC007}
-Else If GetKeyState("n", "P")
+If GetKeyState("n", "P")
   Send {Numpad0}
+;무변환 + @ 의경우 ^ 로
+SC07B & SC01A::+SC007
+;무변환 + / 의경우 _ 로
+SC07B & SC035::_
+;무변환 + ; 의경우 ~ 로
+SC07B & SC027::+SC029
+
+
 
 ;　無変換　+ {asd}  ->  Language swap key
 ; this are functions for korean eng swap
@@ -124,12 +130,9 @@ ImmGetDefaultIMEWnd(hWnd)
 }
 SC07B & s::
 SC07B & a::
-SC07B & d::
-SC07B & SC035::
-If GetKeyState("SC035", "P")
-  Send +{SC00D}
-Else If GetKeyState("a", "P")
+If GetKeyState("a", "P")
   Send ^+{SC00A}
+;무변환 키 + s키 입력시 곧바로 한글타자의 한글입력으로
 Else If GetKeyState("s", "P")
   Send ^+{SC008}
   WinGetActiveTitle, ExplorerTitle
@@ -140,6 +143,7 @@ Else If GetKeyState("s", "P")
     Send, {vk15sc138}
   } 
 return
+;무변환 키만 입력시 곧바로 한글타자의 영어입력으로
 SC07B::
   Send ^+{SC008}
   ime_status := % IME_CHECK("A")
@@ -154,6 +158,8 @@ SC07B::
   return
 ; 無変換 + r -> CAPTURE TOOL
 SC07B & r::#+s
+; 무변환키를 무변환 + d 키로 회복
+SC07B & d::SC07B
 
 ;　変換　+ {...}  ->  arrow keys, tab, esc ...
 SC079 & i::SC148
@@ -216,7 +222,7 @@ if (UpAndDown) OR (LeftAndRight)
     goto SC079 & .
   }
 return
-; カタカナkey -> 変換key
+; 変換key recover
 SC079::
 {
   Send, {SC079}
@@ -431,5 +437,3 @@ Else If GetKeyState("Space", "P")
   Send #{s}
 
 return
-
-
