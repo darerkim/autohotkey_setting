@@ -1,8 +1,8 @@
 ;this is for mouse remapping
 SetKeyDelay, -1
 SetMouseDelay, -1
-InitialSpeed=12
-LimitSpeed=35
+InitialSpeed=30
+LimitSpeed=100
 CurrentSpeed:=InitialSpeed
 
 ;set modifier keys layout like macOs
@@ -205,9 +205,9 @@ If GetKeyState("n", "P")
 Else If GetKeyState("m", "P")
   CurrentSpeed := LimitSpeed
 Else If GetKeyState(",", "P")
-  CurrentSpeed := 4
-Else If GetKeyState(".", "P") 
   CurrentSpeed := 3
+Else If GetKeyState(".", "P") 
+  CurrentSpeed := 2
 If GetKeyState("d", "P")
   UpAndDown := CurrentSpeed
 Else If GetKeyState("e", "P")
