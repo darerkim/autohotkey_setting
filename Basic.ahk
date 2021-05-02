@@ -98,6 +98,7 @@ return
 SC07B & n::
 If GetKeyState("n", "P")
   Send {Numpad0}
+return
 ;무변환 + @ 의경우 ^ 로
 SC07B & SC01A::+SC007
 ;무변환 + / 의경우 _ 로
