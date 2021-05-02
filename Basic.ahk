@@ -205,9 +205,9 @@ If GetKeyState("n", "P")
 Else If GetKeyState("m", "P")
   CurrentSpeed := LimitSpeed
 Else If GetKeyState(",", "P")
-  CurrentSpeed := 7
+  CurrentSpeed := 5
 Else If GetKeyState(".", "P") 
-  CurrentSpeed := 4
+  CurrentSpeed := 5
 If GetKeyState("d", "P")
   UpAndDown := CurrentSpeed
 Else If GetKeyState("e", "P")
